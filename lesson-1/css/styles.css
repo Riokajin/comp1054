@@ -2,43 +2,95 @@
 
 /* STEP 1: Named Selector
 ------------------------------------------------------- */
+h1 {
+    color: darkblue;
+    font-family: 'Arial Black', Gadget, sans-serif;
+    text-align: center;
+}
+
 
 
 /* STEP 2: ID Selector
 ------------------------------------------------------- */
+#main-title {
+    font-size: 3em;
+    text-transform: uppercase;
+}
 
 
 /* STEP 3: Class Selector
 ------------------------------------------------------- */
+.about {
+    border: 2px solid darkblue;
+    padding: 1em;
+    background-color: lightblue;
+}
 
 
 /* STEP 4: Contextual/Descendent Selector
 ------------------------------------------------------- */
+.about p {
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
 
 
 /* STEP 5: Grouped Selector
 ------------------------------------------------------- */
+h1, h2, h3 {
+    font-family: 'Verdana', sans-serif;
+    color: darkred;
+}
 
 
 /* STEP 6: Pseudo-Class Selector
 ------------------------------------------------------- */
-
+a:link {
+    text-decoration: none;
+    color: lightsalmon;
+    background-color: transparent;
+}
+a:visited {
+    color: green;
+}
+a:focus {
+    background-color: lightyellow;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: red;
+}
 
 /* STEP 7: Structural Pseudo-Class Selector
 ------------------------------------------------------- */
+li:nth-child(3n-1) {
+    background-color: orange;
+}
 
 
 /* STEP 8: Pseudo-Element Selector
 ------------------------------------------------------- */
-
+p::first-line {
+    text-transform: uppercase;
+}
+p::first-letter {
+    font-size: 200%;
+}
 
 /* STEP 9: Combinator Selector
 ------------------------------------------------------- */
-
+h1 + p {
+    font-weight: bold;
+}
 
 /* STEP 10: Attribute Selector
 ------------------------------------------------------- */
-
+*[lang="es"] {
+    background-color: red;
+}
 
 /* STEP 11: Getting Crazy
 ------------------------------------------------------- */
+.project
