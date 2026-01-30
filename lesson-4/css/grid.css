@@ -3,7 +3,7 @@
 html {
 	box-sizing: border-box;
 }
-*, *:before, *:after {
+*, *::before, *::after {
 	box-sizing: inherit;
 }
 
@@ -17,14 +17,25 @@ body {
 	width: 80%;
 	margin: 0 auto;
 	/* STEP 1: Set the container to display: grid; */
+	display: grid;
 	
 	/* STEP 7: Plot out the grid-template-areas */
+	grid-template-areas: 
+		"header header header"
+		"subnav content advert"
+		"footer footer footer"
+	
+	;
+
 	
 	/* STEP 8: Control the width of the grid rows */
+	grid-template-rows: 150px auto 100px;
 	
 	/* STEP 9: Control the width of the grid columns (try the fr unit) */
+	grid-template-columns: 1fr 3fr 2fr;
 	
 	/* STEP 10b: Set the grid-gap */
+	gap: 1rem;
 	
 }
 
@@ -32,10 +43,13 @@ header {
 	border: 5px dotted blue;
 	background: #CCF;
 	/* STEP 2: Identify the header as a grid-area */
+	grid-area: header;
 	
 	/* STEP 11a: Fix the <header> - set display: flex; to have the <h1> and the <nav> sit beside each other */
+	display: flex;
 	
 	/* STEP 11b: Set them at either end of the <header> with justify-content: space-between; */
+	justify-content: space-between;
 
 	/* What do you think? Which of the three methods do you think was the most appropriate for the "Holy Grail" layout? */
 }
@@ -53,6 +67,7 @@ header nav ul li {
 	border: 5px dotted green;
 	background: #CFC;
 	/* STEP 3: Identify the nav as a grid-area */
+	grid-area: subnav;
 	
 }
 
@@ -60,6 +75,7 @@ section {
 	border: 5px dotted darkorange;
 	background: #FC9;
 	/* STEP 4: Identify the section as a grid-area */
+	grid-area: content;
 	
 }
 
@@ -67,6 +83,7 @@ aside {
 	border: 5px dotted purple;
 	background: #C9C;
 	/* STEP 5: Identify the aside as a grid-area */
+	grid-area: advert;
 	
 }
 
@@ -74,6 +91,7 @@ footer {
 	border: 5px dotted orange;
 	background: #FF9;
 	/* STEP 6: Identify the footer as a grid-area */
+	grid-area: footer;
 	
 }
 
