@@ -28,11 +28,63 @@ body {
 
 h1, h2, h3 {
     font-family: 'Cinzel', serif;
-    /* cyan for headers */
-    color: #5ED7F2;
+    
+    
 
+}
+
+h2 {
+    /* sparsely used gold accent */
+    color: #E8B85C;
+
+}
+
+h1, h3 {
+    /* cyan for other headers */
+    color: #5ED7F2;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    column-gap: 3rem;
+    row-gap: 3rem;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+}
+
+article {
+    order: 2;
+    flex: 2;
+    border-style: solid;
+    border-width: 0 3px;
+    border-color: #5ED7F2;
+    padding-left: 1.5rem;
+    text-align: center;
+}
+
+main > section:first-of-type {
+    order: 1;
+    flex: 1;
+}
+
+main > section:last-of-type {
+    order: 3;
+    flex: 1;
 }
 
 section {
     margin-bottom: 2rem;
+}
+
+footer {
+    border-top: 1px solid #5ED7F2;
+    padding-top: 1rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    font-size: 0.8rem;
+    opacity: 0.7;
 }
