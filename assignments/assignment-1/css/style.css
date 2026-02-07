@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/* CSS for Assignment 1: Interface Design using CSS */
+/* Author: Adam Evans */
+/* Fonts sourced from Google Fonts: Cinzel and Lato */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 /* Box-sizing normalization */
@@ -17,8 +20,19 @@ body {
     font-family: 'Lato', 'Segoe UI', sans-serif;
     line-height: 1.6;
     padding: 2rem;
+    /* dark blue background colour */
+    background-color: #0D2230;
+    color: #E6E6E6;
+
 }
 
 h1, h2, h3 {
     font-family: 'Cinzel', serif;
+    /* cyan for headers */
+    color: #5ED7F2;
+
+}
+
+section {
+    margin-bottom: 2rem;
 }
