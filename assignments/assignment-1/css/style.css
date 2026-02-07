@@ -28,6 +28,7 @@ body {
 
 h1, h2, h3 {
     font-family: 'Cinzel', serif;
+    text-align: center;
     
     
 
@@ -62,6 +63,9 @@ article {
     border-color: #5ED7F2;
     padding-left: 1.5rem;
     text-align: center;
+    /* box shadow to create an inner cyan glow matching the lifestream from the album art. inset used to keep the glow inwards instead of invading other elements. inset information found here:
+   https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow */
+    box-shadow: inset 10px 0 20px #5ED7F2, inset -10px 0 20px #5ED7F2;
 }
 
 main > section:first-of-type {
