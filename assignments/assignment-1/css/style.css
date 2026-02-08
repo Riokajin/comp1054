@@ -2,8 +2,10 @@
 /* CSS for Assignment 1: Interface Design using CSS */
 /* Author: Adam Evans */
 /* Fonts sourced from Google Fonts: Cinzel and Lato */
+/* Background image sourced from Pixabay */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
+/* -----Base Styles----- */
 
 /* Box-sizing normalization */
 *,
@@ -24,7 +26,7 @@ body {
     /* dark blue background colour */
     background-color: #0D2230;
     color: #E6E6E6;
-    /* Background image sourced from Pixabay */
+    /* Layered gradient used to tint the background image so it works with the sites dark blue palette */
     background: linear-gradient( rgba(13, 34, 48, 0.85), rgba(13, 34, 48, 0.9) ), url("../img/lifestream-swirl.jpg"); 
     background-size: cover; 
     background-repeat: no-repeat; 
@@ -32,6 +34,8 @@ body {
     background-attachment: fixed;
 
 }
+
+/* -----Typography and Headings----- */
 
 h1, h2, h3 {
     font-family: 'Cinzel', serif;
@@ -42,6 +46,7 @@ h1, h2, h3 {
 }
 
 h1 {
+    /* Subtle cyan glow */
     text-shadow: 0 0 8px #5ED7F266;
 }
 
@@ -62,6 +67,8 @@ main > section h3 {
     margin-bottom: 1rem;
 }
 
+/* -----Layout, Three-column Flexbox--- */
+
 main {
     display: flex;
     justify-content: center;
@@ -71,6 +78,8 @@ main {
     flex-wrap: nowrap;
     margin: 0 auto;
 }
+
+/* -----Lyrics Column----- */
 
 article {
     order: 2;
@@ -85,6 +94,8 @@ article {
     box-shadow: inset 10px 0 20px #5ED7F2, inset -10px 0 20px #5ED7F2;
     padding: 1.5rem;
 }
+
+/* -----Side column Styling----- */
 
 main > section:first-of-type {
     order: 1;
@@ -101,6 +112,7 @@ main > section:first-of-type {
 main > section:last-of-type {
     order: 3;
     flex: 1;
+    /* upward gradient to reduce empty space feeling, similar to lifestream colour being stronger in the bottom of the album art */
     background: linear-gradient(to top,
     rgba(94, 215, 242, 0.15),
     rgba(94, 215, 242, 0)
@@ -108,6 +120,8 @@ main > section:last-of-type {
     padding: 1.5rem;
     border-radius: 4px;
 }
+
+/* spacing to keep side columns from looking too small and cramped compared to lyrics */
 
 main > section p {
     line-height: 1.9;
@@ -117,6 +131,8 @@ main > section p {
 section {
     margin-bottom: 2rem;
 }
+
+/* -----Footer styling----- */
 
 footer {
     border-top: 1px solid #5ED7F2;
