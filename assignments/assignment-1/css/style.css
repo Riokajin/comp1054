@@ -4,6 +4,7 @@
 /* Fonts sourced from Google Fonts: Cinzel and Lato */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
+
 /* Box-sizing normalization */
 *,
 *::before,
@@ -19,10 +20,16 @@ html {
 body {
     font-family: 'Lato', 'Segoe UI', sans-serif;
     line-height: 1.6;
-    padding: 2rem;
+    padding: 4rem 2rem 2rem 2rem;
     /* dark blue background colour */
     background-color: #0D2230;
     color: #E6E6E6;
+    /* Background image sourced from Pixabay */
+    background: linear-gradient( #0d2230d9, #0d2230d9 ), url("../img/lifestream-swirl.jpg"); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-attachment: fixed;
 
 }
 
@@ -34,6 +41,10 @@ h1, h2, h3 {
 
 }
 
+h1 {
+    text-shadow: 0 0 8px #5ED7F266;
+}
+
 h2 {
     /* sparsely used gold accent */
     color: #E8B85C;
@@ -43,6 +54,12 @@ h2 {
 h1, h3 {
     /* cyan for other headers */
     color: #5ED7F2;
+}
+
+main > section h3 {
+    border-bottom: 3px solid #5ED7F2;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 main {
@@ -66,16 +83,35 @@ article {
     /* box shadow to create an inner cyan glow matching the lifestream from the album art. inset used to keep the glow inwards instead of invading other elements. inset information found here:
    https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow */
     box-shadow: inset 10px 0 20px #5ED7F2, inset -10px 0 20px #5ED7F2;
+    padding: 1.5rem;
 }
 
 main > section:first-of-type {
     order: 1;
     flex: 1;
+    /* gradient usage sourced from https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient */
+    background: linear-gradient(to top,
+    rgba(94, 215, 242, 0.15),
+    rgba(94, 215, 242, 0)
+    );
+    padding: 1.5rem;
+    border-radius: 4px;
 }
 
 main > section:last-of-type {
     order: 3;
     flex: 1;
+    background: linear-gradient(to top,
+    rgba(94, 215, 242, 0.15),
+    rgba(94, 215, 242, 0)
+    );
+    padding: 1.5rem;
+    border-radius: 4px;
+}
+
+main > section p {
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
 }
 
 section {
