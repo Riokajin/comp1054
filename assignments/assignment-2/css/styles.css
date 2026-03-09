@@ -34,3 +34,25 @@ article img {
     margin-bottom: 1rem;
     grid-column: span 2;
 }
+
+header h1 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #d96f32;
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+header h1::before,
+header h1::after {
+    content: "";
+    background-color: #333;
+    display: inline-block;
+    width: 1px;
+    height: 1.2em;
+    
+
+}
