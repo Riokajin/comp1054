@@ -26,3 +26,9 @@ article {
     column-gap: 2rem;
     row-gap: 1.5rem;
 }
+
+article img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
