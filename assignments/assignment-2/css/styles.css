@@ -24,8 +24,8 @@ article {
 }
 
 article img {
-    width: 500px;
-    height: 500px;
+    width: auto;
+    height: 550px;
     display: block;
     column-span: all;
 }
