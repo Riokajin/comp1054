@@ -1,3 +1,4 @@
+/* Border-box everywhere so padding/borders don't increase element size. */
 html {
     box-sizing: border-box;
 }
@@ -6,22 +7,27 @@ html {
     box-sizing: inherit;
 }
 
+/* Global typography and base styling */
 body {
     font-family: Georgia, serif;
-    line-height: 1.2;
+    line-height: 1.2; 
     color: #333;
     background-color: #f5f5f5;
         
 }
-
+/* Constrain the layout width so the columns don't stretch too wide */
 #container {
     max-width: 1100px;
 }
+
+/* chose to go with a multi-column layout to match the text flow instead of using a more convoluted grid layout, though it sacrificed having the third column flow up to the right */
 
 article {
     column-count: 3;
     
 }
+
+/* portrait image at the top of the article, spans all columns and sits above text flow. height is fixed to avoid overly tall image, auto width to keep the proportions. */
 
 article img {
     width: auto;
@@ -29,6 +35,8 @@ article img {
     display: block;
     column-span: all;
 }
+
+/* Small uppercase section header above the image */
 
 header h1 {
     font-size: 0.9rem;
@@ -39,6 +47,8 @@ header h1 {
     align-items: center;
 }
 
+/* decorative lines before and after the header text. */
+
 header h1::before,
 header h1::after {
     content: "";
@@ -46,14 +56,26 @@ header h1::after {
     display: inline-block;
     width: 1px;
     height: 1.2em;
+    margin: 0 0.5rem;
 }
+
+/* base styling for all h2 elements inside the article. */
 
 article h2 {
     font-size: 1rem;
     font-weight: bold;
     line-height: 1;
-    margin: 0;
+    margin: 0; /* remove the default spacing for tighter magazine-style flow */
 }
+
+/* Removed the default spacing from all paragraphs*/
+
+article p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Intro title first h2. spans all columns and uses larger, centered typography set to lowercase */
 
 article h2:first-of-type {
     column-span: all;
@@ -64,19 +86,20 @@ article h2:first-of-type {
     margin: 1rem;
 }
 
+/* set the first letter to uppercase to match the magazine */
+
 article h2:first-of-type::first-letter {
     text-transform: uppercase;
 }
+
+/* Intro paragraph under the title also spanning all columns. */
 
 article p:first-of-type {
     column-span: all;
     margin: 1rem;
 }
 
-article h1, article p {
-    margin: 0;
-    padding: 0;
-}
+/* Bold for the interviewers name */
 
 article p:last-of-type {
     font-weight: bold;
