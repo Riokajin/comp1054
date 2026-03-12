@@ -75,6 +75,11 @@ article p {
     padding: 0;
 }
 
+article p strong {
+    font-weight: bold;
+    color: #d96f32;
+}
+
 /* Intro title first h2. spans all columns and uses larger, centered typography set to lowercase */
 
 article h2:first-of-type {
