@@ -1,14 +1,15 @@
+@charset "utf-8";
 /* STEP 3: Apply basic layout styles */
 /* Universal box-sizing with inheritance (https://css-tricks.com/box-sizing/#article-header-id-6) */
 html {
-
+	box-sizing: border-box
 }
 *, *:before, *:after {
-
+	box-sizing: inherit;
 }
 /* STEP 5a: Remove all diagnostic colors and margins from HEADER, MAIN, and FOOTER */
 body {
-
+	font-family: sans-serif;
 }
 /* STEP 5b: Change the colors for the HEADER and FOOTER */
 header {
@@ -52,7 +53,7 @@ footer {
 
 }
 /* STEP 4a: Build media query breakpoint for bigger screens (2-column layout) */
-@media only screen and () {
+@media only screen and (min-width: 425px) {
 	h1 {
 
 	}
@@ -61,14 +62,16 @@ footer {
 
 	}
 	main {
-
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
 	main section {
-
+		flex-basis: 50%;
 	}
 }
 /* STEP 4b: Add another media query breakpoint for even bigger screens (4-column layout) */
-@media only screen and () {
+@media only screen and (min-width: 768px) {
 	/* STEP 13a: Rearrange the navigation so that we don't use the hamburger */
 	#menu-icon {
 
