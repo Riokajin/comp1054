@@ -70,3 +70,37 @@ header::after {
 header::after {
   animation: crackPulse 3s infinite ease-in-out;
 }
+
+/* Frost shimmer effect on the main title */
+header h1 {
+  position: relative; /* needed for the shimmer overlay */
+  overflow: hidden; /* hides shimmer outside the text */
+}
+
+/* Shimmer overlay */
+header h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%; /* start shimmer off-screen */
+  width: 150%;
+  height: 100%;
+  bacground: leaner-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.9) 50%,
+    transparent 100%
+  );
+  animation: frostShimmer 2.5s infinite;
+}
+
+/* Shimmer animation */
+@keyframes frostShimmer {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
