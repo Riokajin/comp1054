@@ -42,3 +42,13 @@ header p {
   font-size: 1rem;
   opacity: 0.9;
 }
+
+/* Decorative crack border under the header */
+header::after {
+  content: "";
+  display: block;
+  height: 4px;
+  background: #ff2e2e; /* red accent */
+  box-shadow: 0 0 12px #ff2e2e; /* glowing effect */
+  margin-top: 2rem;
+}
