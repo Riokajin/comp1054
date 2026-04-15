@@ -1,1 +1,44 @@
 @charset "utf-8";
+
+/* Global box-sizing reset */
+html {
+	box-sizing: border-box;
+}
+
+/* Apply border-box to all elements */
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+/* Header base styles */
+header {
+  background: linear-gradient(to bottom, #0a1a2a, #12344d);
+  padding: 4rem 0;
+  color: #e9f6ff;
+  text-align: center;
+}
+
+/* Limit header content width */
+header .container {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header title styling */
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Header subtitle */
+header h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+/* Header paragraph */
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
