@@ -9,6 +9,46 @@ html {
 *, *:before, *:after {
 	box-sizing: inherit;
 }
+
+:root {
+  /* Core palette */
+  --ice-dark: #0a1a2a;
+  --ice-mid: #12344d;
+  --ice-light: #e9f6ff;
+  --ice-accent: #cfe8ff;
+
+  /* Crack colors */
+  --crack-red: #ff2e2e;
+
+  /* Layout */
+  --max-width: 70rem;
+  --spacing: 1.5rem;
+
+  /* Glow presets */
+  --glow-ice: 0 0 8px var(--ice-accent);
+  --glow-crack: 0 0 14px var(--crack-red);
+}
+
+/* body goes here */
+
+/* Atmospheric Background Layers */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.05), transparent 60%),
+    radial-gradient(circle at 70% 80%, rgba(255,255,255,0.04), transparent 60%);
+    animation: fogMove 20s infinite alternate ease-in-out;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes fogMove {
+  from { transform: translateX(-20px); }
+  to   { transform: translateX(20px); }
+}
+
 /* Header base styles */
 header {
   background: linear-gradient(to bottom, #0a1a2a, #12344d);
@@ -43,14 +83,32 @@ header p {
   opacity: 0.9;
 }
 
-/* Decorative crack border under the header */
+/* Jagged crack under the header */
 header::after {
   content: "";
   display: block;
-  height: 4px;
-  background: #ff2e2e; /* red accent */
-  box-shadow: 0 0 12px #ff2e2e; /* glowing effect */
+  position: relative;
+  height: 14px;
   margin-top: 2rem;
+
+  background:
+    /* segment 1 */
+    linear-gradient(12deg, #ff2e2e 0%, #ff2e2e 100%) 0% 4px / 18% 3px,
+    /* segment 2 */
+    linear-gradient(-15deg, #ff2e2e 0%, #ff2e2e 100%) 14% 1px / 22% 4px,
+    /* segment 3 */
+    linear-gradient(8deg, #ff2e2e 0%, #ff2e2e 100%) 35% 6px / 16% 2px,
+    /* segment 4 */
+    linear-gradient(-10deg, #ff2e2e 0%, #ff2e2e 100%) 52% 2px / 20% 5px,
+    /* segment 5 */
+    linear-gradient(18deg, #ff2e2e 0%, #ff2e2e 100%) 75% 7px / 18% 3px,
+    /* segment 6 */
+    linear-gradient(-8deg, #ff2e2e 0%, #ff2e2e 100%) 90% 3px / 12% 4px;
+
+  background-repeat: no-repeat;
+
+  /* glow around the crack */
+  box-shadow: 0 0 14px #ff2e2e;
 }
 
 /* Pulse animation for the crack glow */
@@ -85,7 +143,7 @@ header h1::after {
   left: -150%; /* start shimmer off-screen */
   width: 150%;
   height: 100%;
-  background: leaner-gradient(
+  background: linear-gradient(
     120deg,
     transparent 0%,
     rgba(255, 255, 255, 0.9) 50%,
@@ -103,6 +161,8 @@ header h1::after {
     left: 150%;
   }
 }
+
+
 
 /* Nav bar base styles */
 nav {
