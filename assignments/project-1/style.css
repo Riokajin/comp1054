@@ -85,7 +85,7 @@ header h1::after {
   left: -150%; /* start shimmer off-screen */
   width: 150%;
   height: 100%;
-  bacground: leaner-gradient(
+  background: leaner-gradient(
     120deg,
     transparent 0%,
     rgba(255, 255, 255, 0.9) 50%,
@@ -104,3 +104,47 @@ header h1::after {
   }
 }
 
+/* Nav bar base styles */
+nav {
+  background: #0a1a2a; /* dark icy blue */
+  padding: 1rem 0;
+}
+
+/* Center nav content */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Nav links */
+nav a {
+  color: #e9f6ff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.25rem 0;
+}
+
+/* Icy hover effect */
+nav a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px #cfe8ff;
+}
+
+/* Underline effect on hover */
+nav a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: #cfe8ff;
+  transition: width 0.3s ease;
+  margin: 0 auto;
+}
+
+nav a:hover::after {
+  width: 100%
+}
