@@ -148,3 +148,95 @@ nav a::after {
 nav a:hover::after {
   width: 100%
 }
+
+/* Main content container */
+main .container {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Content sections */
+section {
+  background: #f4f9ff; /* soft icy background */
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  border: 1px solid #d0e4F5; /* light icy border */
+}
+
+/* Section headings */
+section h2, section h3 {
+  color: #0a1a2a; /* dark icy blue */
+  margin-bottom: 1rem;
+}
+
+/* Paragraph and spacing */
+section p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Blockquote styling */
+blockquote {
+  background: #eaf3ff;
+  border-left: 4px solid #12344d;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 4px;
+}
+
+/* Aside panel */
+aside {
+  background: #f0f7ff;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+  border: 1px solid #c9dff0;
+}
+
+/* Footer base styles */
+footer {
+  background: #0a1a2a; /* dark icy blue */
+  color: #e9f6ff; /* frosty text */
+  padding: 2rem 2.5rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+/* Footer container width */
+footer .container {
+  max-width: 70rem;
+  margin: 0 auto;
+}
+/* Footer links */
+footer a {
+  color: #cfe8ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 6px #cfe8ff;
+}
+
+/* Footer spacing */
+footer p,
+footer ul {
+  margin-bottom: 1rem;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+/* Icy top border */
+footer {
+  border-top: 3px solid #12344d;
+}
+
