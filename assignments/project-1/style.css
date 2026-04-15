@@ -52,3 +52,21 @@ header::after {
   box-shadow: 0 0 12px #ff2e2e; /* glowing effect */
   margin-top: 2rem;
 }
+
+/* Pulse animation for the crack glow */
+@keyframes crackPulse {
+  0% {
+    box-shadow: 0 0 8px #ff2e2e;
+  }
+  50% {
+    box-shadow: 0 0 16px #ff2e2e;
+  }
+  100% {
+    box-shadow: 0 0 8px #ff2e2e;
+  }
+}
+
+/* Apply the pulse animation to the crack */
+header::after {
+  animation: crackPulse 3s infinite ease-in-out;
+}
