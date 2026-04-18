@@ -1,3 +1,11 @@
+/* 
+  Custom Style Stage Theme
+  Icy–Demonic hybrid aesthetic using frosted glass, ember accents, 
+  animated fog, and a glowing crack under the header.
+  Demonstrates: gradients, animations, pseudo-elements, variables, 
+  responsive layout, and layered visual effects.
+*/
+
 @charset "utf-8";
 
 /* Global box-sizing reset */
@@ -29,7 +37,25 @@ html {
   --glow-crack: 0 0 14px var(--crack-red);
 }
 
-/* body goes here */
+
+body {
+  background: #0a0f16;
+  color: var(--ice-light);
+  font-family: "Inter", sans-serif;
+}
+
+header h1, header h2 {
+  color: var(--ice-light);
+  font-family: "Merriweather", serif;
+  letter-spacing: 1px;
+  text-shadow:
+    0 0 6px rgba(200, 230, 255, 0.4),
+    0 0 12px rgba(200, 230, 255, 0.25);
+}
+
+h2, h3 {
+  text-shadow: 0 0 6px rgba(200, 230, 255, 0.4);
+}
 
 /* Atmospheric Background Layers */
 body::before {
@@ -44,6 +70,15 @@ body::before {
     z-index: -1;
 }
 
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 60%, rgba(0,0,0,0.4));
+  z-index: -1;
+}
+
 @keyframes fogMove {
   from { transform: translateX(-20px); }
   to   { transform: translateX(20px); }
@@ -52,9 +87,19 @@ body::before {
 /* Header base styles */
 header {
   background: linear-gradient(to bottom, #0a1a2a, #12344d);
-  padding: 4rem 0;
   color: #e9f6ff;
   text-align: center;
+  padding-top: 3.5rem;
+  padding-bottom: 2rem;
+
+}
+
+/* Force SVG/logo size inside header */
+header svg {
+  width: 180px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem;
 }
 
 /* Limit header content width */
@@ -67,48 +112,36 @@ header .container {
 /* Header title styling */
 header h1 {
   font-size: 3rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 /* Header subtitle */
 header h2 {
   font-size: 1.5rem;
   font-weight: normal;
-  margin-bottom: 1rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
 }
 
 /* Header paragraph */
 header p {
   font-size: 1rem;
   opacity: 0.9;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Jagged crack under the header */
+/* glowing red border under the header */
 header::after {
   content: "";
   display: block;
   position: relative;
-  height: 14px;
+  height: 4px;
+  background: var(--crack-red);
+  box-shadow: 0 0 12px var(--crack-red);
   margin-top: 2rem;
-
-  background:
-    /* segment 1 */
-    linear-gradient(12deg, #ff2e2e 0%, #ff2e2e 100%) 0% 4px / 18% 3px,
-    /* segment 2 */
-    linear-gradient(-15deg, #ff2e2e 0%, #ff2e2e 100%) 14% 1px / 22% 4px,
-    /* segment 3 */
-    linear-gradient(8deg, #ff2e2e 0%, #ff2e2e 100%) 35% 6px / 16% 2px,
-    /* segment 4 */
-    linear-gradient(-10deg, #ff2e2e 0%, #ff2e2e 100%) 52% 2px / 20% 5px,
-    /* segment 5 */
-    linear-gradient(18deg, #ff2e2e 0%, #ff2e2e 100%) 75% 7px / 18% 3px,
-    /* segment 6 */
-    linear-gradient(-8deg, #ff2e2e 0%, #ff2e2e 100%) 90% 3px / 12% 4px;
-
-  background-repeat: no-repeat;
-
-  /* glow around the crack */
-  box-shadow: 0 0 14px #ff2e2e;
+  border-radius: 2px;
+  animation: crackPulse 3s infinite ease-in-out;
 }
 
 /* Pulse animation for the crack glow */
@@ -122,11 +155,6 @@ header::after {
   100% {
     box-shadow: 0 0 8px #ff2e2e;
   }
-}
-
-/* Apply the pulse animation to the crack */
-header::after {
-  animation: crackPulse 3s infinite ease-in-out;
 }
 
 /* Frost shimmer effect on the main title */
@@ -209,6 +237,10 @@ nav a:hover::after {
   width: 100%
 }
 
+nav a {
+  border-bottom: none;
+}
+
 /* Main content container */
 main .container {
   max-width: 70rem;
@@ -216,19 +248,53 @@ main .container {
   padding: 2rem 1.5rem;
 }
 
-/* Content sections */
-section {
-  background: #f4f9ff; /* soft icy background */
+/* Frosted Glass Panels */
+section, aside {
+  background: rgba(255, 255, 255, 0.05); /* darker, translucent */
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 20px rgba(0, 80, 140, 0.25);
   padding: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   border-radius: 8px;
-  border: 1px solid #d0e4F5; /* light icy border */
+}
+
+/* Frosted panel for the intro box inside the header */
+article blockquote {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 20px rgba(0, 80, 140, 0.25);
+  padding: 1.5rem;
+  margin: 2rem auto;
+  border-radius: 8px;
+  max-width: 60rem;
+  color: var(--ice-light);
+}
+
+/* Links inside the frosted blockquote */
+a {
+  color: var(--ice-accent);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(207, 232, 255, 0.4);
+  transition: color 0.2s ease, text-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px var(--ice-accent);
+  border-color: var(--ice-accent);
 }
 
 /* Section headings */
 section h2, section h3 {
   color: #0a1a2a; /* dark icy blue */
   margin-bottom: 1rem;
+  text-shadow:
+  0 0 6px rgba(200, 230, 255, 0.35),
+  0 0 8px rgba(255, 20, 20, 0.55), /* Subtle ember glow */
+  0 0 12px rgba(255, 20, 20, 0.35)
 }
 
 /* Paragraph and spacing */
@@ -237,23 +303,7 @@ section p {
   margin-bottom: 1rem;
 }
 
-/* Blockquote styling */
-blockquote {
-  background: #eaf3ff;
-  border-left: 4px solid #12344d;
-  padding: 1rem 1.5rem;
-  margin: 2rem 0;
-  border-radius: 4px;
-}
 
-/* Aside panel */
-aside {
-  background: #f0f7ff;
-  padding: 1.5rem;
-  margin: 2rem 0;
-  border-radius: 8px;
-  border: 1px solid #c9dff0;
-}
 
 /* Footer base styles */
 footer {
@@ -262,6 +312,7 @@ footer {
   padding: 2rem 2.5rem;
   text-align: center;
   margin-top: 3rem;
+  text-shadow: 0 0 4px rgba(200, 230, 255, 0.2);
 }
 /* Footer container width */
 footer .container {
@@ -300,3 +351,23 @@ footer {
   border-top: 3px solid #12344d;
 }
 
+/* Responsive Adjustments */
+
+@media (max-width: 720px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  header h2 {
+    font-size: 1.2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  section, aside {
+    padding: 1.5rem;
+  }
+}
